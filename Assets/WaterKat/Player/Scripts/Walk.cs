@@ -14,7 +14,7 @@ public class Walk : MonoBehaviour
     private void Update()
     {
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        float rotationAngle = player.cameraContainer.rotation.eulerAngles.y;
+        float rotationAngle = player.camera.transform.rotation.eulerAngles.y;
 
         Vector3 rotatedInput = Quaternion.Euler(0, rotationAngle, 0) * input;
 
