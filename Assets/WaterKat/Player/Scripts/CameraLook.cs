@@ -22,8 +22,20 @@ public class CameraLook : MonoBehaviour
     private Vector2 yRotLimits = Vector2.zero;
     private float yRot;
 
+    [SerializeField]
+    private bool lockCursor = true;
+
+    private void Start()
+    {
+        if (lockCursor)
+            Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
+        if (lockCursor&&Input.GetMouseButtonDown(0))
+            Cursor.lockState = CursorLockMode.Locked;
+
         xRot += Input.GetAxis("Mouse X") * sensitivity;
         if (xRotClamp)
             xRot = Mathf.Clamp(xRot, xRotLimits.x, xRotLimits.y);
