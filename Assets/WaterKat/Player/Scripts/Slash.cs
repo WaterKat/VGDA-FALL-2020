@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleJump : MonoBehaviour
+public class Slash : MonoBehaviour
 {
     [SerializeField]
     private Player player;
 
     [SerializeField]
-    private float jumpSpeed = 10f;
-
+    private Animator swordAnimator;
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetMouseButtonDown(0))
         {
-            player.playerPhysics.OverrideVelocity(1, jumpSpeed);
+            swordAnimator.SetTrigger("Slash");
         }
     }
 }

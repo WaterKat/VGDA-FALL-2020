@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WaterKat.Player_N;
 
 public class Grapple : MonoBehaviour
 {
@@ -25,15 +26,19 @@ public class Grapple : MonoBehaviour
     private GameObject targetGrapple = null;
     private GameObject currentPullGrapple = null;
 
-    public Walk walk;
+    public Running running;
+    public Jump jump;
+
+    private int inputMouseButton = 1;
 
     private void Update()
     {
-        walk.enabled = !pullTowardsGrapple;
+        running.enabled = !pullTowardsGrapple;
+        jump.enabled = !pullTowardsGrapple;
 
         targetGrapple = FindGrapple();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(inputMouseButton))
         {
             currentPullGrapple = targetGrapple;
             if (currentPullGrapple != null)
@@ -45,7 +50,7 @@ public class Grapple : MonoBehaviour
                 pullCoroutine = StartCoroutine(pullTowardsTarget(currentPullGrapple.transform));
             }
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(inputMouseButton))
         {
             if (pullCoroutine != null)
                 StopCoroutine(pullCoroutine);
@@ -59,7 +64,7 @@ public class Grapple : MonoBehaviour
         while (pullTowardsGrapple)
         {
             Debug.Log("pulling");
-            player.characterController.Move(Vector3.ClampMagnitude((target.position - transform.position)/Time.deltaTime,grappleSpeed)*Time.deltaTime);
+            player.rigidbody.velocity = Vector3.ClampMagnitude((target.position+(Vector3.down*2) - transform.position) / Time.deltaTime, grappleSpeed) ;
             yield return null;
         }
     }

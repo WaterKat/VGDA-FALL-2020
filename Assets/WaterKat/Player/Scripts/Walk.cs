@@ -21,7 +21,6 @@ public class Walk : MonoBehaviour
 
         Vector3 rotatedInput = Quaternion.Euler(0, rotationAngle, 0) * input;
 
-
-        player.characterController.SimpleMove(rotatedInput * walkSpeed);
+        player.playerPhysics.AddVelocity(rotatedInput * walkSpeed);
     }
 }
