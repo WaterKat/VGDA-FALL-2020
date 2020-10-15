@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6643252210483897107}
   - component: {fileID: 1568012628}
   - component: {fileID: 1568012629}
+  - component: {fileID: 1568012620}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -61,7 +62,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484477527723960284}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -158,6 +159,20 @@ MonoBehaviour:
   applyGravity: 1
   jumpHeight: 5
   jumpTime: 0.5
+--- !u!114 &1568012620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484477527723960284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a7042ca51eac4da3d862a596f9538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 930659760094251917}
+  swordAnimator: {fileID: 2460604209649956686}
 --- !u!1 &1722322322664821021
 GameObject:
   m_ObjectHideFlags: 0
