@@ -237,7 +237,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_7FD7038: {r: 1, g: 1, b: 1, a: 1}
-    - Color_DAEE955E: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+    - Color_DAEE955E: {r: 1, g: 1, b: 1, a: 1}
     - Vector2_BBA005B5: {r: 2, g: 2, b: 0, a: 0}
     - Vector2_C3AB4CCD: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_C3C622BC: {r: 10, g: 10, b: 0, a: 0}
