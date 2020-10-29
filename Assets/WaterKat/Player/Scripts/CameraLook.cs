@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
@@ -25,16 +23,32 @@ public class CameraLook : MonoBehaviour
     [SerializeField]
     private bool lockCursor = true;
 
+    private bool animating = false;
+
     private void Start()
     {
         if (lockCursor)
             Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void StartingCameraAnimation()
+    {
+        xRot = 0;
+        yRot = 0;
+        animating = true;
+    }
+    public void EndingCameraAnimation()
+    {
+        animating = false;
+    }
+
     private void Update()
     {
         if (lockCursor&&Input.GetMouseButtonDown(0))
             Cursor.lockState = CursorLockMode.Locked;
+
+        if (animating)
+            return;
 
         xRot += Input.GetAxis("Mouse X") * sensitivity;
         if (xRotClamp)

@@ -116,7 +116,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 70.57
+    m_Value: 30
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
@@ -240,7 +240,7 @@ MonoBehaviour:
     max: 1
   aerosolTint:
     m_OverrideState: 1
-    m_Value: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+    m_Value: {r: 1, g: 0.66461706, b: 0.033018887, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
