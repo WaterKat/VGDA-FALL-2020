@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Debug_Wind : MonoBehaviour
 {
+    [SerializeField]
     private new Rigidbody rigidbody;
     public Vector3 windVelocity = new Vector3(-10, 0, 0);
     public float velocityThreshold = 2f;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        //rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
