@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using WaterKat.Player_N;
@@ -29,7 +30,10 @@ public class Grapple : MonoBehaviour
     public Running running;
     public Jump jump;
 
-    private int inputMouseButton = 1;
+    private int inputMouseButton = 2;
+
+
+    public bool GrappleEnabled = true;
 
     private void Update()
     {
@@ -37,6 +41,9 @@ public class Grapple : MonoBehaviour
         jump.enabled = !pullTowardsGrapple;
 
         targetGrapple = FindGrapple();
+
+        if (!GrappleEnabled)
+            return;
 
         if (Input.GetMouseButtonDown(inputMouseButton))
         {

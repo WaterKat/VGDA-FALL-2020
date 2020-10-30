@@ -14,13 +14,13 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
+  - PostProcessingA
+  - PostProcessingB
   - FirstPersonWeapon
   - Locked
   - Damageable
   - Enemy
-  - 
+  - ScentTrail
   - 
   - 
   - 
